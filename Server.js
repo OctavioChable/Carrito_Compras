@@ -35,17 +35,6 @@ const port = PORT;
 
 
 // --- CONEXIÓN A MONGODB ---
-//const uri = DATABASE;
-/*
-const uri = 'mongodb+srv://al061914_db_user:prUZyfz5aRiGK3kO@clusterfunkohunter.o2pcqmu.mongodb.net/?appName=ClusterFunkoHunter';
-mongoose.connect(uri, {
-}).then(() => {
-    console.log("Conexión a MongoDB exitosa");
-
-}).catch((error) => {
-    console.error("Error al conectar a MongoDB:", error.message);
-});*/
-
 const url = DATABASE;
 
  mongoose.connect(url)
