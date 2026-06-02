@@ -20,9 +20,11 @@ passport.deserializeUser(async (id, done) => {
 });
 
 passport.use(new GoogleStrategy({
+    // Credenciales de la app registrada en Google Cloud Console
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "/auth/google/callback"
+    // URL a la que Google redirige tras la autenticación (debe coincidir con la registrada en Google)
+    callbackURL: process.env.GOOGLE_CALLBACK_URL || "/auth/google/callback"
   },
   async (accessToken, refreshToken, profile, done) => {
     const { id, displayName, emails, photos } = profile;
